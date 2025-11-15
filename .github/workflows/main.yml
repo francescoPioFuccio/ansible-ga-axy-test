@@ -1,0 +1,16 @@
+on: [push]
+
+jobs:
+  defect_prediction_job:
+    runs-on: ubuntu-latest
+    name: Run DEFUSE's model DOCUMENTATION for Ansible
+    steps:
+      - name: Defect Prediction
+        id: defect_prediction
+        uses: sighzeero/EQS-radon-defuse-action@v1.0.6
+        with:
+          model: 'AL8ud78PDkRAO41tDKXT'
+          language: 'ansible'
+          url: 'https://tressie-ornithologic-preliberally.ngrok-free.dev'  
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
