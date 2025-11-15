@@ -1,0 +1,8 @@
+---
+- name: Test conditional error
+  hosts: all
+  tasks:
+    - name: Esempio di conditional sbagliato
+      debug:
+        msg: "Questo task dovrebbe fallire il test del modello"
+      when: "'variable_non_definita' == truey"  # errore voluto: 'truey' non è valido
