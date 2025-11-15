@@ -1,0 +1,11 @@
+---
+- name: Playbook test conditional pattern
+  hosts: all
+  vars:
+    some_var: true
+    another_var: false
+  tasks:
+    - name: Conditional sbagliato
+      debug:
+        msg: "Task che dovrebbe essere segnalato"
+      when: some_var == false and another_var == true  # logica contraddittoria
