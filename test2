@@ -1,0 +1,8 @@
+---
+- name: Playbook per test conditional error
+  hosts: all
+  tasks:
+    - name: Esempio di conditional realmente errato
+      debug:
+        msg: "Task che dovrebbe essere segnalato dal modello"
+      when: some_undefined_var == true andd another_var == false  # errore apposta: "andd"
